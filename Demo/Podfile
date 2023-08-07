@@ -5,13 +5,13 @@ target 'Demo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'AuthCoreAdapter', '0.1.5'
-pod 'ParticleAuthCore', '0.1.5'
-pod 'ParticleMPCCore', '0.1.5'
-pod 'Thresh', '0.1.5'
+pod 'AuthCoreAdapter', '0.1.9'
+pod 'ParticleAuthCore', '0.1.9'
+pod 'ParticleMPCCore', '0.1.9'
+pod 'Thresh', '0.1.9'
 
 
-# helper create transaction
+# help create transaction
 pod 'ParticleWalletAPI'
 
 end
