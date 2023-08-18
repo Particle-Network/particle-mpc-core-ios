@@ -13,7 +13,8 @@ import ParticleAuthCore
 class OtherAPITestViewController: TestViewController {
     enum TestCase: String, CaseIterable {
         case changeMasterPassword = "ChangeMasterPassword"
-        
+        case isConnected = "isConnected"
+        case syncUserInfo = "syncUserInfo"
     }
         
     let data: [TestCase] = TestCase.allCases
@@ -41,7 +42,8 @@ class OtherAPITestViewController: TestViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch self.data[indexPath.row] {
         case .changeMasterPassword: changeMasterPasswordMethod()
-        
+        case .isConnected: isConnectedMethod()
+        case .syncUserInfo: syncUserInfoMethod()
         }
     }
 }
@@ -57,6 +59,30 @@ extension OtherAPITestViewController {
             } catch {
                 ToastTest.showError("change master password failure, error = \(error)")
                 print("change master password failure, error = \(error)")
+            }
+        }
+    }
+    
+    private func isConnectedMethod() {
+        Task {
+            do {
+                let result = try await auth.isConnected()
+                ToastTest.showResult("is connected, result = \(result)")
+            } catch {
+                ToastTest.showError("is connected failure, error = \(error)")
+                print("is connected failure, error = \(error)")
+            }
+        }
+    }
+    
+    private func syncUserInfoMethod() {
+        Task {
+            do {
+                let result = try await auth.syncUserInfo()
+                ToastTest.showResult("syncUserInfo, result = \(result.rawValue)")
+            } catch {
+                ToastTest.showError("syncUserInfo failure, error = \(error)")
+                print("syncUserInfo failure, error = \(error)")
             }
         }
     }

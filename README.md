@@ -19,10 +19,10 @@ Please note that the current version of our software does not support simulation
 
 | Xcode version                | 14.1 or higher | 
 |------------------------------|---------------|
-| ParticleAuthCore             | 0.1.12         |
-| ParticleMPCCore              | 0.1.12         |
-| AuthCoreAdapter              | 0.1.12         |
-| Thresh                       | 0.1.12         |
+| ParticleAuthCore             | 0.1.13         |
+| ParticleMPCCore              | 0.1.13         |
+| AuthCoreAdapter              | 0.1.13         |
+| Thresh                       | 0.1.13         |
 
 ###  🧂 Update Podfile
 ```ruby

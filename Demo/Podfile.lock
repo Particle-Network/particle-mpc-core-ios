@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.7.1)
-  - AuthCoreAdapter (0.1.12):
+  - AuthCoreAdapter (0.1.13):
     - ConnectCommon
     - ParticleAuthCore
   - AWSCore (2.33.3)
@@ -9,7 +9,7 @@ PODS:
   - Base58.swift (1.0.2):
     - BigInt
   - BigInt (5.2.0)
-  - ConnectCommon (0.2.8):
+  - ConnectCommon (0.2.9):
     - BigInt (~> 5.2.0)
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
@@ -17,9 +17,9 @@ PODS:
     - SwiftyJSON (~> 5.0)
     - TweetNacl
   - CryptoSwift (1.7.1)
-  - GRDB.swift (5.26.1):
-    - GRDB.swift/standard (= 5.26.1)
-  - GRDB.swift/standard (5.26.1)
+  - GRDB.swift (6.16.0):
+    - GRDB.swift/standard (= 6.16.0)
+  - GRDB.swift/standard (6.16.0)
   - libwebp (1.3.1):
     - libwebp/demux (= 1.3.1)
     - libwebp/mux (= 1.3.1)
@@ -32,7 +32,7 @@ PODS:
   - libwebp/sharpyuv (1.3.1)
   - libwebp/webp (1.3.1):
     - libwebp/sharpyuv
-  - ParticleAuthCore (0.1.12):
+  - ParticleAuthCore (0.1.13):
     - AWSKMS
     - Base58.swift
     - CryptoSwift
@@ -48,12 +48,12 @@ PODS:
     - SwiftMessages
     - SwiftyJSON (~> 5.0)
     - Then
-  - ParticleMPCCore (0.1.12):
+  - ParticleMPCCore (0.1.13):
     - Base58.swift
     - CryptoSwift
     - SwiftyJSON (~> 5.0)
     - Thresh
-  - ParticleNetworkBase (1.0.2):
+  - ParticleNetworkBase (1.0.6):
     - Base58.swift
     - BigInt (~> 5.2.0)
     - CryptoSwift
@@ -62,9 +62,9 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletAPI (0.15.1):
+  - ParticleWalletAPI (1.0.6):
     - CryptoSwift
-    - GRDB.swift (= 5.26.1)
+    - GRDB.swift (= 6.16.0)
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.5.0)
@@ -97,15 +97,15 @@ PODS:
   - SwiftyJSON (5.0.1)
   - SwiftyUserDefaults (5.3.0)
   - Then (3.0.0)
-  - Thresh (0.1.12)
+  - Thresh (0.1.13)
   - TweetNacl (1.0.2)
 
 DEPENDENCIES:
-  - AuthCoreAdapter (= 0.1.12)
-  - ParticleAuthCore (= 0.1.12)
-  - ParticleMPCCore (= 0.1.12)
+  - AuthCoreAdapter (= 0.1.13)
+  - ParticleAuthCore (= 0.1.13)
+  - ParticleMPCCore (= 0.1.13)
   - ParticleWalletAPI
-  - Thresh (= 0.1.12)
+  - Thresh (= 0.1.13)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -117,10 +117,12 @@ SPEC REPOS:
     - BigInt
     - ConnectCommon
     - CryptoSwift
+    - GRDB.swift
     - libwebp
     - ParticleAuthCore
     - ParticleMPCCore
     - ParticleNetworkBase
+    - ParticleWalletAPI
     - RxAlamofire
     - RxCocoa
     - RxRelay
@@ -136,25 +138,22 @@ SPEC REPOS:
     - Then
     - Thresh
     - TweetNacl
-  trunk:
-    - GRDB.swift
-    - ParticleWalletAPI
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
-  AuthCoreAdapter: a8e6638815e49cfb03cdb81bdf8a1704058bbcfd
+  AuthCoreAdapter: 2be6e8d8bb8b1ceb50e1bfcae506f7d9b0863213
   AWSCore: 49a03831c1c50d52a31168083598c7bcfc389b62
   AWSKMS: b3207847eceebab0658de7d0776f4d6caec3c70d
   Base58.swift: e0e16655f9db843b8cd367593ed6f7d90d136b7f
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
-  ConnectCommon: e234a610fdafa2ca263d3c9a9bd64e3b43b2a642
+  ConnectCommon: a36ec6302f8766fa2843deeae75874b0258467a8
   CryptoSwift: d3d18dc357932f7e6d580689e065cf1f176007c1
-  GRDB.swift: e98cd55ec99dea5da99355d588149063e4cfa0eb
+  GRDB.swift: 7985834461bca2a3eaed615887daadf3864c779b
   libwebp: 33dc822fbbf4503668d09f7885bbfedc76c45e96
-  ParticleAuthCore: 8a23c66ac7c8b0566d4340b566293a6b3baf5d76
-  ParticleMPCCore: 93258f6939fb78a8f60c657a6f72b691293ffded
-  ParticleNetworkBase: 40d9c57c45104d1441cbc70a50e8a613002304fd
-  ParticleWalletAPI: 47da310ce772024f6de2fe8b71904a4bd897a65b
+  ParticleAuthCore: 25df70083bf03893953557b8e9fd7b5b55b8eac8
+  ParticleMPCCore: 45dcd9b3361d168014dfbe42491637c858149d1b
+  ParticleNetworkBase: 4ce39f867a7fa05e237b2082e908caf78b340be0
+  ParticleWalletAPI: 595dce613978a45ba46f29c84815e43b733f5ee3
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -168,9 +167,9 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
-  Thresh: a5886724f0c3629f89b53cd0ff736e4af29e1e96
+  Thresh: ee2bda0380c9fbeafc3bb28bcdbd50eb5a85c721
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: 5e0d884c175b288e9e4a8933d3932fec9c06b354
+PODFILE CHECKSUM: fa85bb36810c6b8b84127d46eaf6e73f13290cff
 
 COCOAPODS: 1.12.1
