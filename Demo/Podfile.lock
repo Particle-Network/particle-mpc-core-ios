@@ -1,22 +1,22 @@
 PODS:
-  - Alamofire (5.7.1)
+  - Alamofire (5.8.0)
   - AuthCoreAdapter (0.1.13):
     - ConnectCommon
     - ParticleAuthCore
-  - AWSCore (2.33.3)
-  - AWSKMS (2.33.3):
-    - AWSCore (= 2.33.3)
+  - AWSCore (2.33.4)
+  - AWSKMS (2.33.4):
+    - AWSCore (= 2.33.4)
   - Base58.swift (1.0.2):
     - BigInt
   - BigInt (5.2.0)
-  - ConnectCommon (0.2.9):
+  - ConnectCommon (0.2.10):
     - BigInt (~> 5.2.0)
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
     - secp256k1.swift (~> 0.1)
     - SwiftyJSON (~> 5.0)
     - TweetNacl
-  - CryptoSwift (1.7.1)
+  - CryptoSwift (1.8.0)
   - GRDB.swift (6.16.0):
     - GRDB.swift/standard (= 6.16.0)
   - GRDB.swift/standard (6.16.0)
@@ -53,7 +53,7 @@ PODS:
     - CryptoSwift
     - SwiftyJSON (~> 5.0)
     - Thresh
-  - ParticleNetworkBase (1.0.6):
+  - ParticleNetworkBase (1.1.1):
     - Base58.swift
     - BigInt (~> 5.2.0)
     - CryptoSwift
@@ -62,7 +62,7 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletAPI (1.0.6):
+  - ParticleWalletAPI (1.1.1):
     - CryptoSwift
     - GRDB.swift (= 6.16.0)
     - ParticleNetworkBase
@@ -82,9 +82,9 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - SDWebImage (5.17.0):
-    - SDWebImage/Core (= 5.17.0)
-  - SDWebImage/Core (5.17.0)
+  - SDWebImage (5.18.0):
+    - SDWebImage/Core (= 5.18.0)
+  - SDWebImage/Core (5.18.0)
   - SDWebImageWebPCoder (0.13.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.17)
@@ -102,9 +102,11 @@ PODS:
 
 DEPENDENCIES:
   - AuthCoreAdapter (= 0.1.13)
+  - ConnectCommon (= 0.2.10)
   - ParticleAuthCore (= 0.1.13)
   - ParticleMPCCore (= 0.1.13)
-  - ParticleWalletAPI
+  - ParticleNetworkBase (= 1.1.1)
+  - ParticleWalletAPI (= 1.1.1)
   - Thresh (= 0.1.13)
 
 SPEC REPOS:
@@ -140,25 +142,25 @@ SPEC REPOS:
     - TweetNacl
 
 SPEC CHECKSUMS:
-  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
   AuthCoreAdapter: 2be6e8d8bb8b1ceb50e1bfcae506f7d9b0863213
-  AWSCore: 49a03831c1c50d52a31168083598c7bcfc389b62
-  AWSKMS: b3207847eceebab0658de7d0776f4d6caec3c70d
+  AWSCore: 83e3416d2224ba98b61d8eadcfcb1f90f48fab82
+  AWSKMS: 5db68db95bdf6476701014bfa871efb4cb86ad09
   Base58.swift: e0e16655f9db843b8cd367593ed6f7d90d136b7f
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
-  ConnectCommon: a36ec6302f8766fa2843deeae75874b0258467a8
-  CryptoSwift: d3d18dc357932f7e6d580689e065cf1f176007c1
+  ConnectCommon: b99026c89e34e4685a5a5345c5755197d2a522fb
+  CryptoSwift: 52aaf3fce7337552863b1d952e408085f0e65030
   GRDB.swift: 7985834461bca2a3eaed615887daadf3864c779b
   libwebp: 33dc822fbbf4503668d09f7885bbfedc76c45e96
   ParticleAuthCore: 25df70083bf03893953557b8e9fd7b5b55b8eac8
   ParticleMPCCore: 45dcd9b3361d168014dfbe42491637c858149d1b
-  ParticleNetworkBase: 4ce39f867a7fa05e237b2082e908caf78b340be0
-  ParticleWalletAPI: 595dce613978a45ba46f29c84815e43b733f5ee3
+  ParticleNetworkBase: 53c24208ba608a521a0ae80354503ecc74092090
+  ParticleWalletAPI: 7fa545250c3536db817e7323d7f208db2c68daca
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
+  SDWebImage: 182830bcddc30cde95fbc60dfe4badc3553d94ba
   SDWebImageWebPCoder: af09429398d99d524cae2fe00f6f0f6e491ed102
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
@@ -170,6 +172,6 @@ SPEC CHECKSUMS:
   Thresh: ee2bda0380c9fbeafc3bb28bcdbd50eb5a85c721
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: fa85bb36810c6b8b84127d46eaf6e73f13290cff
+PODFILE CHECKSUM: 989cf728f59fc97dc7a0a79e6495e16af865f576
 
 COCOAPODS: 1.12.1

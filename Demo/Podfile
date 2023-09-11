@@ -11,9 +11,12 @@ pod 'ParticleAuthCore', '0.1.13'
 pod 'ParticleMPCCore', '0.1.13'
 pod 'Thresh', '0.1.13'
 
+pod 'ConnectCommon', '0.2.10'
+pod 'ParticleNetworkBase', '1.1.1'
+
 
 # help create transaction
-pod 'ParticleWalletAPI'
+pod 'ParticleWalletAPI', '1.1.1'
 
 end
 
