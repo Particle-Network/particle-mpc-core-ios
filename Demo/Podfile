@@ -6,17 +6,17 @@ target 'Demo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'AuthCoreAdapter', '0.1.13'
-pod 'ParticleAuthCore', '0.1.13'
-pod 'ParticleMPCCore', '0.1.13'
-pod 'Thresh', '0.1.13'
+pod 'AuthCoreAdapter', '0.1.14'
+pod 'ParticleAuthCore', '0.1.14'
+pod 'ParticleMPCCore', '0.1.14'
+pod 'Thresh', '0.1.14'
 
-pod 'ConnectCommon', '0.2.10'
-pod 'ParticleNetworkBase', '1.1.1'
+pod 'ConnectCommon', '0.2.11'
+pod 'ParticleNetworkBase', '1.2.0'
 
 
 # help create transaction
-pod 'ParticleWalletAPI', '1.1.1'
+pod 'ParticleWalletAPI', '1.2.0'
 
 end
 
