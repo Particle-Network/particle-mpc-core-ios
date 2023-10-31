@@ -14,8 +14,8 @@ Install the following:
 Xcode 14.1 or higher
 
 ### Note
+Please note that the SDK supports `ios-arm64` (iOS devices). We currently do not support simulators. To perform testing, you will require an actual iPhone device.
 
-Please note that the current version of our software does not support simulation testing. To perform testing, you will require an actual iPhone device.
 
 | Xcode version                | 14.1 or higher | 
 |------------------------------|---------------|
