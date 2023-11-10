@@ -108,7 +108,6 @@ class SignMessagePage: UIViewController {
             sourceTextView.text = "waiting configure transactions"
             
             if ParticleNetwork.getChainInfo().chain != .solana {
-                
                 var amount: String
                 if ParticleNetwork.getChainInfo().chain == .tron {
                     amount = "0x3E8"
@@ -288,57 +287,58 @@ class SignMessagePage: UIViewController {
     }
     
     private func sign(_ message: String) {
+        let chainInfo = ParticleNetwork.getChainInfo()
         Task {
             do {
                 var signature: String
                 switch self.supportMethod {
                 case .signMessage:
                     if ParticleNetwork.getChainInfo().chain == .solana {
-                        signature = try await self.auth.solana.signMessage(message)
+                        signature = try await self.auth.solana.signMessage(message, chainInfo: chainInfo)
                     } else {
-                        signature = try await self.auth.evm.personalSign(message)
+                        signature = try await self.auth.evm.personalSign(message, chainInfo: chainInfo)
                     }
                    
                 case .signMessageUnique:
-                    signature = try await self.auth.evm.personalSign(message)
+                    signature = try await self.auth.evm.personalSign(message, chainInfo: chainInfo)
                 case .signTypedData:
-                    signature = try await self.auth.evm.signTypedData(message)
+                    signature = try await self.auth.evm.signTypedData(message, chainInfo: chainInfo)
                 case .signTypedDataUnique:
-                    signature = try await self.auth.evm.signTypedDataUnique(message)
+                    signature = try await self.auth.evm.signTypedDataUnique(message, chainInfo: chainInfo)
                 case .sendToken:
-                    if ParticleNetwork.getChainInfo().chain == .solana {
-                        signature = try await self.auth.solana.signAndSendTransaction(message)
+                    if chainInfo.chain == .solana {
+                        signature = try await self.auth.solana.signAndSendTransaction(message, chainInfo: chainInfo)
                     } else {
-                        signature = try await self.auth.evm.sendTransaction(message)
+                        signature = try await self.auth.evm.sendTransaction(message, chainInfo: chainInfo)
                     }
                 case .sendNative:
-                    if ParticleNetwork.getChainInfo().chain == .solana, !message.isValidBase58String() {
+                    if chainInfo.chainType == .solana, !message.isValidBase58String() {
                         throw ParticleNetwork.ResponseError(code: nil, message: "transaction is not ready or not valid")
                     }
                     
-                    if ParticleNetwork.getChainInfo().chain == .solana {
-                        signature = try await self.auth.solana.signAndSendTransaction(message)
+                    if chainInfo.chainType == .solana {
+                        signature = try await self.auth.solana.signAndSendTransaction(message, chainInfo: chainInfo)
                     } else {
-                        signature = try await self.auth.evm.sendTransaction(message)
+                        signature = try await self.auth.evm.sendTransaction(message, chainInfo: chainInfo)
                     }
                     
                 case .signTransaction:
-                    if ParticleNetwork.getChainInfo().chain == .solana, !message.isValidBase58String() {
+                    if chainInfo.chainType == .solana, !message.isValidBase58String() {
                         throw ParticleNetwork.ResponseError(code: nil, message: "transaction is not ready or not valid")
                     }
-                    signature = try await self.auth.solana.signTransaction(message)
+                    signature = try await self.auth.solana.signTransaction(message, chainInfo: chainInfo)
                 case .signTransactions:
                     
                     let messages = message.split(separator: ",").map {
                         String($0)
                     }
                     try messages.forEach { message in
-                        if ParticleNetwork.getChainInfo().chain == .solana, !message.isValidBase58String() {
+                        if chainInfo.chainType == .solana, !message.isValidBase58String() {
                             throw ParticleNetwork.ResponseError(code: nil, message: "transaction is not ready or not valid")
                         }
                     }
                     
-                    let signatures = try await self.auth.solana.signAllTransactions(messages)
+                    let signatures = try await self.auth.solana.signAllTransactions(messages, chainInfo: chainInfo)
                     signature = String(signatures.joined(separator: ","))
                 }
                 
@@ -371,15 +371,6 @@ class SignMessagePage: UIViewController {
     private func getSolanaTokenTransaction(publicAddress: String, receiverAddress: String, mintAddress: String, amount: ParticleNetworkBase.BInt) async throws -> String {
         return try await ParticleWalletAPI.getSolanaService().serializeTransaction(type: .transferToken, sender: publicAddress, receiver: receiverAddress, lamports: amount, mintAddress: mintAddress, payer: nil).map {
             $0.stringValue
-        }.value
-    }
-    
-    private func getRecentBlockHash() async throws -> String {
-        let request: Single<RecentBlockHash> = auth.node.rpc(method: "getRecentBlockhash", parameters: []).map {
-            try! JSONDecoder().decode(RecentBlockHash.self, from: $0.rawData())
-        }
-        return try await request.map {
-            $0.value.blockhash
         }.value
     }
 }

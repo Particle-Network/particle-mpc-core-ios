@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         ParticleNetwork.initialize(config: .init(chainInfo: .polygon(.mumbai), devEnv: .debug))
 
+        // set control if prompt master password when  login
+        // if prompt payment password when sign
+//        ParticleNetwork.setSecurityAccountConfig(config: .init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 1))
+
         return true
     }
 
