@@ -9,7 +9,7 @@ PODS:
   - Base58.swift (1.0.2):
     - BigInt
   - BigInt (5.2.0)
-  - ConnectCommon (0.2.13):
+  - ConnectCommon (0.2.14):
     - BigInt (~> 5.2.0)
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
@@ -53,7 +53,7 @@ PODS:
     - CryptoSwift
     - SwiftyJSON (~> 5.0)
     - Thresh
-  - ParticleNetworkBase (1.3.0):
+  - ParticleNetworkBase (1.3.5):
     - Base58.swift
     - BigInt (~> 5.2.0)
     - CryptoSwift
@@ -62,7 +62,7 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletAPI (1.3.0):
+  - ParticleWalletAPI (1.3.5):
     - CryptoSwift
     - GRDB.swift (= 6.16.0)
     - ParticleNetworkBase
@@ -102,11 +102,11 @@ PODS:
 
 DEPENDENCIES:
   - AuthCoreAdapter (= 1.3.0)
-  - ConnectCommon (= 0.2.13)
+  - ConnectCommon (= 0.2.14)
   - ParticleAuthCore (= 1.3.0)
   - ParticleMPCCore (= 1.3.0)
-  - ParticleNetworkBase (= 1.3.0)
-  - ParticleWalletAPI (= 1.3.0)
+  - ParticleNetworkBase (= 1.3.5)
+  - ParticleWalletAPI (= 1.3.5)
   - Thresh (= 1.3.0)
 
 SPEC REPOS:
@@ -148,14 +148,14 @@ SPEC CHECKSUMS:
   AWSKMS: 5db68db95bdf6476701014bfa871efb4cb86ad09
   Base58.swift: e0e16655f9db843b8cd367593ed6f7d90d136b7f
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
-  ConnectCommon: e85d9caedcc0422df48315733d5ee0460a0acdad
+  ConnectCommon: ed55351eccc39eda46222057c013fd7e564a28b9
   CryptoSwift: 52aaf3fce7337552863b1d952e408085f0e65030
   GRDB.swift: 7985834461bca2a3eaed615887daadf3864c779b
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   ParticleAuthCore: 73da87484b6e8687861555e8c77e50452f74c562
   ParticleMPCCore: f57f264ee4391d5be7d780498724105e3ef4002d
-  ParticleNetworkBase: 9ae1d10714cbceb30d6272fec0abbd868f8957e7
-  ParticleWalletAPI: 15eef12bc8bf2cda6aa1e4214b36c3a97e701870
+  ParticleNetworkBase: 44373a596a7fd23776d5ad4963d5ce42f94d08c5
+  ParticleWalletAPI: bd69d8a9b028e5a789327867a478e043c71a60c5
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -172,6 +172,6 @@ SPEC CHECKSUMS:
   Thresh: 1ecdcb7b7219f149bac88266bbc3b6333cf66ea2
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: b296a3e48b7e8a92502c84759d7c17568726e1c1
+PODFILE CHECKSUM: 1518c3166d0349bf92615bd7a863ba2672e162b3
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.2
