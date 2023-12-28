@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        ParticleNetwork.initialize(config: .init(chainInfo: .polygon(.mumbai), devEnv: .debug))
+        ParticleNetwork.initialize(config: .init(chainInfo: .polygon, devEnv: .debug))
 
         // set control if prompt master password when  login
         // if prompt payment password when sign

@@ -55,7 +55,7 @@ class LoginTestViewController: TestViewController {
     
     private func handleUserInfo(_ userInfo: UserInfo) {
         var currentChainAddress: String
-        if ParticleNetwork.getChainInfo().chain == .solana {
+        if ParticleNetwork.getChainInfo().chainType == .solana {
             currentChainAddress = userInfo.wallets.first(where: { $0.chainName == "solana"
             })?.publicAddress ?? ""
         } else {

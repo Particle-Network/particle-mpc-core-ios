@@ -24,7 +24,7 @@ enum TestCase: String, CaseIterable {
 
 class MainViewController: UITableViewController {
     var data: [TestCase] {
-        if ParticleNetwork.getChainInfo().chain == .solana {
+        if ParticleNetwork.getChainInfo().chainType == .solana {
             return TestCase.allCases.filter { $0 != .evmWalletSign }
         } else {
             return TestCase.allCases.filter { $0 != .solanaWalletSign }

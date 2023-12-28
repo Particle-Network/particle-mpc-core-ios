@@ -26,7 +26,7 @@ class SwitchChainViewController: UIViewController {
     }
 
     func configureData() {
-        let chainInfos = ParticleNetwork.allNetworks
+        let chainInfos = ParticleNetwork.ChainInfo.allNetworks
 
         let groupDict = Dictionary(grouping: chainInfos, by: { $0.uiName })
 
@@ -81,7 +81,7 @@ extension SwitchChainViewController: UITableViewDataSource {
 
 extension SwitchChainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chainInfo = data[indexPath.section].values.first?[indexPath.row] ?? ParticleNetwork.ChainInfo.ethereum(.mainnet)
+        let chainInfo = data[indexPath.section].values.first?[indexPath.row] ?? ParticleNetwork.ChainInfo.ethereum
 
         let auth = Auth()
 

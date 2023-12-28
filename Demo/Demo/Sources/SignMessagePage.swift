@@ -31,7 +31,7 @@ class SignMessagePage: UIViewController {
     let auth = Auth()
     
     var publicAddress: String? {
-        if ParticleNetwork.getChainInfo().chain != .solana {
+        if ParticleNetwork.getChainInfo().chainType != .solana {
             let publicAddress = auth.evm.getAddress()
             
             return publicAddress
@@ -88,7 +88,7 @@ class SignMessagePage: UIViewController {
         
         switch supportMethod {
         case .signMessage:
-            if ParticleNetwork.getChainInfo().chain != .solana {
+            if ParticleNetwork.getChainInfo().chainType != .solana {
                 sourceTextView.text = message ?? "hello world"
             } else {
                 // "hello world" encoded to base58
@@ -107,9 +107,9 @@ class SignMessagePage: UIViewController {
             }
             sourceTextView.text = "waiting configure transactions"
             
-            if ParticleNetwork.getChainInfo().chain != .solana {
+            if ParticleNetwork.getChainInfo().chainType != .solana {
                 var amount: String
-                if ParticleNetwork.getChainInfo().chain == .tron {
+                if ParticleNetwork.getChainInfo().isTron {
                     amount = "0x3E8"
                 } else {
                     amount = "0x38D7EA4C68000"
@@ -150,7 +150,7 @@ class SignMessagePage: UIViewController {
             
             signBtn.isEnabled = false
             sourceTextView.text = "waiting configure transactions"
-            if ParticleNetwork.getChainInfo().chain != .solana {
+            if ParticleNetwork.getChainInfo().chainType != .solana {
                 let contractAddress = "0x326C977E6efc84E512bB9C30f76E30c160eD06FB"
                 
                 let receiver = "0xa0869E99886e1b6737A4364F2cf9Bb454FD637E4"
@@ -272,7 +272,7 @@ class SignMessagePage: UIViewController {
             
             var message = self.sourceTextView.text ?? ""
             
-            if ParticleNetwork.getChainInfo().chain != .solana {
+            if ParticleNetwork.getChainInfo().chainType != .solana {
                 if self.supportMethod == .sendToken || self.supportMethod == .sendNative {
                     if message.isValidHexString() {
                     } else {
@@ -293,7 +293,7 @@ class SignMessagePage: UIViewController {
                 var signature: String
                 switch self.supportMethod {
                 case .signMessage:
-                    if ParticleNetwork.getChainInfo().chain == .solana {
+                    if ParticleNetwork.getChainInfo().chainType == .solana {
                         signature = try await self.auth.solana.signMessage(message, chainInfo: chainInfo)
                     } else {
                         signature = try await self.auth.evm.personalSign(message, chainInfo: chainInfo)
@@ -306,7 +306,7 @@ class SignMessagePage: UIViewController {
                 case .signTypedDataUnique:
                     signature = try await self.auth.evm.signTypedDataUnique(message, chainInfo: chainInfo)
                 case .sendToken:
-                    if chainInfo.chain == .solana {
+                    if chainInfo.chainType == .solana {
                         signature = try await self.auth.solana.signAndSendTransaction(message, chainInfo: chainInfo)
                     } else {
                         signature = try await self.auth.evm.sendTransaction(message, chainInfo: chainInfo)
