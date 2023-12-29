@@ -2,7 +2,8 @@
 //  SwitchChainViewController.swift
 //  Demo
 //
-//  Created by link on 31/07/2023.
+//  Created by link on 2022/6/6.
+//  Copyright © 2022 ParticleNetwork. All rights reserved.
 //
 
 import Foundation
@@ -28,7 +29,7 @@ class SwitchChainViewController: UIViewController {
     func configureData() {
         let chainInfos = ParticleNetwork.ChainInfo.allNetworks
 
-        let groupDict = Dictionary(grouping: chainInfos, by: { $0.uiName })
+        let groupDict = Dictionary(grouping: chainInfos, by: { $0.name })
 
         data = groupDict.map { [$0.key: $0.value] }.sorted(by: { dict0, dict1 in
             let chainInfo0 = dict0.values.first!.first!

@@ -7,29 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F30B95A2B3EA00100936F5B /* LoginEmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9482B3EA00000936F5B /* LoginEmailCell.swift */; };
+		5F30B95B2B3EA00100936F5B /* SignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9492B3EA00000936F5B /* SignCell.swift */; };
+		5F30B95C2B3EA00100936F5B /* LoginJWTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B94A2B3EA00000936F5B /* LoginJWTCell.swift */; };
+		5F30B95D2B3EA00100936F5B /* LoginPresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B94B2B3EA00000936F5B /* LoginPresetCell.swift */; };
+		5F30B95E2B3EA00100936F5B /* LoginSocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B94C2B3EA00000936F5B /* LoginSocialCell.swift */; };
+		5F30B95F2B3EA00100936F5B /* LanguageTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B94E2B3EA00100936F5B /* LanguageTestViewController.swift */; };
+		5F30B9602B3EA00100936F5B /* HelperTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B94F2B3EA00100936F5B /* HelperTestViewController.swift */; };
+		5F30B9612B3EA00100936F5B /* SolanaWalletSignTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9502B3EA00100936F5B /* SolanaWalletSignTestViewController.swift */; };
+		5F30B9622B3EA00100936F5B /* EVMWalletSignTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9512B3EA00100936F5B /* EVMWalletSignTestViewController.swift */; };
+		5F30B9632B3EA00100936F5B /* ApperanceTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9522B3EA00100936F5B /* ApperanceTestViewController.swift */; };
+		5F30B9642B3EA00100936F5B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9532B3EA00100936F5B /* MainViewController.swift */; };
+		5F30B9652B3EA00100936F5B /* OtherAPITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9542B3EA00100936F5B /* OtherAPITestViewController.swift */; };
+		5F30B9662B3EA00100936F5B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9552B3EA00100936F5B /* TestViewController.swift */; };
+		5F30B9672B3EA00100936F5B /* LoginTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9562B3EA00100936F5B /* LoginTestViewController.swift */; };
+		5F30B9682B3EA00100936F5B /* SignMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9572B3EA00100936F5B /* SignMessagePage.swift */; };
+		5F30B9692B3EA00100936F5B /* LogoutTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9582B3EA00100936F5B /* LogoutTestViewController.swift */; };
+		5F30B96A2B3EA00100936F5B /* SwitchChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9592B3EA00100936F5B /* SwitchChainViewController.swift */; };
+		5F30B96C2B3EA02100936F5B /* ToastTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B96B2B3EA02100936F5B /* ToastTest.swift */; };
+		5F30B96E2B3EA09B00936F5B /* LoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B96D2B3EA09A00936F5B /* LoginHeaderView.swift */; };
 		5FABA4CA2A7757AD008F7D57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4C92A7757AD008F7D57 /* AppDelegate.swift */; };
 		5FABA4CC2A7757AD008F7D57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4CB2A7757AD008F7D57 /* SceneDelegate.swift */; };
 		5FABA4D12A7757AD008F7D57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FABA4CF2A7757AD008F7D57 /* Main.storyboard */; };
 		5FABA4D32A7757AE008F7D57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FABA4D22A7757AE008F7D57 /* Assets.xcassets */; };
 		5FABA4D62A7757AE008F7D57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FABA4D42A7757AE008F7D57 /* LaunchScreen.storyboard */; };
-		5FABA4E82A7758E1008F7D57 /* ApperanceTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4DE2A7758E0008F7D57 /* ApperanceTestViewController.swift */; };
-		5FABA4E92A7758E1008F7D57 /* LogoutTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4DF2A7758E0008F7D57 /* LogoutTestViewController.swift */; };
-		5FABA4EA2A7758E1008F7D57 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4E02A7758E0008F7D57 /* TestViewController.swift */; };
-		5FABA4EB2A7758E1008F7D57 /* LanguageTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4E12A7758E0008F7D57 /* LanguageTestViewController.swift */; };
-		5FABA4EC2A7758E1008F7D57 /* OtherAPITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4E22A7758E0008F7D57 /* OtherAPITestViewController.swift */; };
-		5FABA4ED2A7758E1008F7D57 /* EVMWalletSignTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4E32A7758E0008F7D57 /* EVMWalletSignTestViewController.swift */; };
-		5FABA4EE2A7758E1008F7D57 /* LoginTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4E42A7758E0008F7D57 /* LoginTestViewController.swift */; };
-		5FABA4EF2A7758E1008F7D57 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4E52A7758E1008F7D57 /* MainViewController.swift */; };
-		5FABA4F02A7758E1008F7D57 /* SwitchChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4E62A7758E1008F7D57 /* SwitchChainViewController.swift */; };
-		5FABA4F12A7758E1008F7D57 /* SolanaWalletSignTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4E72A7758E1008F7D57 /* SolanaWalletSignTestViewController.swift */; };
-		5FABA4F32A7758F0008F7D57 /* SignMessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4F22A7758F0008F7D57 /* SignMessagePage.swift */; };
-		5FABA4F62A775B7B008F7D57 /* LoginJWTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4F42A775B7B008F7D57 /* LoginJWTCell.swift */; };
-		5FABA4F72A775B7B008F7D57 /* ToastTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FABA4F52A775B7B008F7D57 /* ToastTest.swift */; };
 		5FABA4F92A775C7D008F7D57 /* ParticleNetwork-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FABA4F82A775C7D008F7D57 /* ParticleNetwork-Info.plist */; };
 		69A2E045B98C8E8A7AD446B1 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06720E780DA9B7BA63AB2FD /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F30B9482B3EA00000936F5B /* LoginEmailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginEmailCell.swift; sourceTree = "<group>"; };
+		5F30B9492B3EA00000936F5B /* SignCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignCell.swift; sourceTree = "<group>"; };
+		5F30B94A2B3EA00000936F5B /* LoginJWTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginJWTCell.swift; sourceTree = "<group>"; };
+		5F30B94B2B3EA00000936F5B /* LoginPresetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresetCell.swift; sourceTree = "<group>"; };
+		5F30B94C2B3EA00000936F5B /* LoginSocialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSocialCell.swift; sourceTree = "<group>"; };
+		5F30B94E2B3EA00100936F5B /* LanguageTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTestViewController.swift; sourceTree = "<group>"; };
+		5F30B94F2B3EA00100936F5B /* HelperTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperTestViewController.swift; sourceTree = "<group>"; };
+		5F30B9502B3EA00100936F5B /* SolanaWalletSignTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolanaWalletSignTestViewController.swift; sourceTree = "<group>"; };
+		5F30B9512B3EA00100936F5B /* EVMWalletSignTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVMWalletSignTestViewController.swift; sourceTree = "<group>"; };
+		5F30B9522B3EA00100936F5B /* ApperanceTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApperanceTestViewController.swift; sourceTree = "<group>"; };
+		5F30B9532B3EA00100936F5B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5F30B9542B3EA00100936F5B /* OtherAPITestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherAPITestViewController.swift; sourceTree = "<group>"; };
+		5F30B9552B3EA00100936F5B /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		5F30B9562B3EA00100936F5B /* LoginTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestViewController.swift; sourceTree = "<group>"; };
+		5F30B9572B3EA00100936F5B /* SignMessagePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMessagePage.swift; sourceTree = "<group>"; };
+		5F30B9582B3EA00100936F5B /* LogoutTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutTestViewController.swift; sourceTree = "<group>"; };
+		5F30B9592B3EA00100936F5B /* SwitchChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchChainViewController.swift; sourceTree = "<group>"; };
+		5F30B96B2B3EA02100936F5B /* ToastTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastTest.swift; sourceTree = "<group>"; };
+		5F30B96D2B3EA09A00936F5B /* LoginHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHeaderView.swift; sourceTree = "<group>"; };
 		5FABA4C62A7757AD008F7D57 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FABA4C92A7757AD008F7D57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FABA4CB2A7757AD008F7D57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,19 +62,6 @@
 		5FABA4D22A7757AE008F7D57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FABA4D52A7757AE008F7D57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FABA4D72A7757AE008F7D57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FABA4DE2A7758E0008F7D57 /* ApperanceTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApperanceTestViewController.swift; sourceTree = "<group>"; };
-		5FABA4DF2A7758E0008F7D57 /* LogoutTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutTestViewController.swift; sourceTree = "<group>"; };
-		5FABA4E02A7758E0008F7D57 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		5FABA4E12A7758E0008F7D57 /* LanguageTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTestViewController.swift; sourceTree = "<group>"; };
-		5FABA4E22A7758E0008F7D57 /* OtherAPITestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherAPITestViewController.swift; sourceTree = "<group>"; };
-		5FABA4E32A7758E0008F7D57 /* EVMWalletSignTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVMWalletSignTestViewController.swift; sourceTree = "<group>"; };
-		5FABA4E42A7758E0008F7D57 /* LoginTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestViewController.swift; sourceTree = "<group>"; };
-		5FABA4E52A7758E1008F7D57 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		5FABA4E62A7758E1008F7D57 /* SwitchChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchChainViewController.swift; sourceTree = "<group>"; };
-		5FABA4E72A7758E1008F7D57 /* SolanaWalletSignTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolanaWalletSignTestViewController.swift; sourceTree = "<group>"; };
-		5FABA4F22A7758F0008F7D57 /* SignMessagePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMessagePage.swift; sourceTree = "<group>"; };
-		5FABA4F42A775B7B008F7D57 /* LoginJWTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginJWTCell.swift; sourceTree = "<group>"; };
-		5FABA4F52A775B7B008F7D57 /* ToastTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastTest.swift; sourceTree = "<group>"; };
 		5FABA4F82A775C7D008F7D57 /* ParticleNetwork-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParticleNetwork-Info.plist"; sourceTree = "<group>"; };
 		85B80309DAE2B8A6A0C809B4 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		C7AEFE0172E98BC35192F024 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +87,38 @@
 				85B80309DAE2B8A6A0C809B4 /* Pods-Demo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5F30B9472B3EA00000936F5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F30B9482B3EA00000936F5B /* LoginEmailCell.swift */,
+				5F30B9492B3EA00000936F5B /* SignCell.swift */,
+				5F30B94A2B3EA00000936F5B /* LoginJWTCell.swift */,
+				5F30B94B2B3EA00000936F5B /* LoginPresetCell.swift */,
+				5F30B94C2B3EA00000936F5B /* LoginSocialCell.swift */,
+				5F30B96D2B3EA09A00936F5B /* LoginHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F30B94D2B3EA00100936F5B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				5F30B94E2B3EA00100936F5B /* LanguageTestViewController.swift */,
+				5F30B94F2B3EA00100936F5B /* HelperTestViewController.swift */,
+				5F30B9502B3EA00100936F5B /* SolanaWalletSignTestViewController.swift */,
+				5F30B9512B3EA00100936F5B /* EVMWalletSignTestViewController.swift */,
+				5F30B9522B3EA00100936F5B /* ApperanceTestViewController.swift */,
+				5F30B9532B3EA00100936F5B /* MainViewController.swift */,
+				5F30B9542B3EA00100936F5B /* OtherAPITestViewController.swift */,
+				5F30B9552B3EA00100936F5B /* TestViewController.swift */,
+				5F30B9562B3EA00100936F5B /* LoginTestViewController.swift */,
+				5F30B9572B3EA00100936F5B /* SignMessagePage.swift */,
+				5F30B9582B3EA00100936F5B /* LogoutTestViewController.swift */,
+				5F30B9592B3EA00100936F5B /* SwitchChainViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		5FABA4BD2A7757AD008F7D57 = {
@@ -113,19 +157,9 @@
 		5FABA4DD2A7758D3008F7D57 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5FABA4F22A7758F0008F7D57 /* SignMessagePage.swift */,
-				5FABA4DE2A7758E0008F7D57 /* ApperanceTestViewController.swift */,
-				5FABA4E32A7758E0008F7D57 /* EVMWalletSignTestViewController.swift */,
-				5FABA4E12A7758E0008F7D57 /* LanguageTestViewController.swift */,
-				5FABA4E42A7758E0008F7D57 /* LoginTestViewController.swift */,
-				5FABA4DF2A7758E0008F7D57 /* LogoutTestViewController.swift */,
-				5FABA4E52A7758E1008F7D57 /* MainViewController.swift */,
-				5FABA4E22A7758E0008F7D57 /* OtherAPITestViewController.swift */,
-				5FABA4E72A7758E1008F7D57 /* SolanaWalletSignTestViewController.swift */,
-				5FABA4E62A7758E1008F7D57 /* SwitchChainViewController.swift */,
-				5FABA4E02A7758E0008F7D57 /* TestViewController.swift */,
-				5FABA4F42A775B7B008F7D57 /* LoginJWTCell.swift */,
-				5FABA4F52A775B7B008F7D57 /* ToastTest.swift */,
+				5F30B96B2B3EA02100936F5B /* ToastTest.swift */,
+				5F30B94D2B3EA00100936F5B /* VC */,
+				5F30B9472B3EA00000936F5B /* View */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -272,21 +306,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FABA4E92A7758E1008F7D57 /* LogoutTestViewController.swift in Sources */,
-				5FABA4EF2A7758E1008F7D57 /* MainViewController.swift in Sources */,
-				5FABA4ED2A7758E1008F7D57 /* EVMWalletSignTestViewController.swift in Sources */,
+				5F30B9672B3EA00100936F5B /* LoginTestViewController.swift in Sources */,
+				5F30B95D2B3EA00100936F5B /* LoginPresetCell.swift in Sources */,
+				5F30B9642B3EA00100936F5B /* MainViewController.swift in Sources */,
+				5F30B95A2B3EA00100936F5B /* LoginEmailCell.swift in Sources */,
+				5F30B96E2B3EA09B00936F5B /* LoginHeaderView.swift in Sources */,
 				5FABA4CA2A7757AD008F7D57 /* AppDelegate.swift in Sources */,
-				5FABA4F72A775B7B008F7D57 /* ToastTest.swift in Sources */,
-				5FABA4EE2A7758E1008F7D57 /* LoginTestViewController.swift in Sources */,
-				5FABA4E82A7758E1008F7D57 /* ApperanceTestViewController.swift in Sources */,
-				5FABA4F32A7758F0008F7D57 /* SignMessagePage.swift in Sources */,
-				5FABA4F12A7758E1008F7D57 /* SolanaWalletSignTestViewController.swift in Sources */,
-				5FABA4EC2A7758E1008F7D57 /* OtherAPITestViewController.swift in Sources */,
-				5FABA4EB2A7758E1008F7D57 /* LanguageTestViewController.swift in Sources */,
-				5FABA4EA2A7758E1008F7D57 /* TestViewController.swift in Sources */,
-				5FABA4F62A775B7B008F7D57 /* LoginJWTCell.swift in Sources */,
-				5FABA4F02A7758E1008F7D57 /* SwitchChainViewController.swift in Sources */,
+				5F30B9682B3EA00100936F5B /* SignMessagePage.swift in Sources */,
+				5F30B95E2B3EA00100936F5B /* LoginSocialCell.swift in Sources */,
+				5F30B9612B3EA00100936F5B /* SolanaWalletSignTestViewController.swift in Sources */,
+				5F30B9692B3EA00100936F5B /* LogoutTestViewController.swift in Sources */,
+				5F30B96C2B3EA02100936F5B /* ToastTest.swift in Sources */,
+				5F30B95F2B3EA00100936F5B /* LanguageTestViewController.swift in Sources */,
+				5F30B95B2B3EA00100936F5B /* SignCell.swift in Sources */,
+				5F30B9602B3EA00100936F5B /* HelperTestViewController.swift in Sources */,
+				5F30B95C2B3EA00100936F5B /* LoginJWTCell.swift in Sources */,
+				5F30B9662B3EA00100936F5B /* TestViewController.swift in Sources */,
+				5F30B96A2B3EA00100936F5B /* SwitchChainViewController.swift in Sources */,
 				5FABA4CC2A7757AD008F7D57 /* SceneDelegate.swift in Sources */,
+				5F30B9632B3EA00100936F5B /* ApperanceTestViewController.swift in Sources */,
+				5F30B9652B3EA00100936F5B /* OtherAPITestViewController.swift in Sources */,
+				5F30B9622B3EA00100936F5B /* EVMWalletSignTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +486,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.15;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ultiverse.auth.example.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -475,7 +515,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.15;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ultiverse.auth.example.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -1,20 +1,22 @@
 //
 //  OtherAPIViewController.swift
-//  Demo
+//  ParticleMPC
 //
-//  Created by link on 31/07/2023.
+//  Created by link on 09/06/2023.
 //
 
 import Foundation
+import ParticleAuthCore
 import ParticleNetworkBase
 import UIKit
-import ParticleAuthCore
 
 class OtherAPITestViewController: TestViewController {
     enum TestCase: String, CaseIterable {
-        case changeMasterPassword = "ChangeMasterPassword"
-        case isConnected = "isConnected"
-        case syncUserInfo = "syncUserInfo"
+        case changeMasterPassword = "Change master password"
+        case isConnected = "Is connected"
+        case syncUserInfo = "Sync userInfo"
+        case openAccountAndSecurity = "Open account and security"
+        case getUserInfo = "Get userInfo"
     }
         
     let data: [TestCase] = TestCase.allCases
@@ -44,6 +46,8 @@ class OtherAPITestViewController: TestViewController {
         case .changeMasterPassword: changeMasterPasswordMethod()
         case .isConnected: isConnectedMethod()
         case .syncUserInfo: syncUserInfoMethod()
+        case .openAccountAndSecurity: openAccountAndSecurityMethod()
+        case .getUserInfo: getUserInfoMethod()
         }
     }
 }
@@ -87,6 +91,18 @@ extension OtherAPITestViewController {
         }
     }
     
+    private func openAccountAndSecurityMethod() {
+        do {
+            try self.auth.openAccountAndSecurity()
+        } catch {
+            ToastTest.showError("openAccountAndSecurity failure, error = \(error)")
+            print("openAccountAndSecurity failure, error = \(error)")
+        }
+    }
     
+    private func getUserInfoMethod() {
+        let userInfo = self.auth.getUserInfo()
+        ToastTest.showResult("getUserInfo, result = \(userInfo)")
+        print(userInfo)
+    }
 }
-

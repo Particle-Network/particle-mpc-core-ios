@@ -1,31 +1,38 @@
 //
-//  SolanaWalletSignTestViewController.swift
-//  Demo
+//  EVMWalletSignTestViewController.swift
+//  ParticleMPC
 //
-//  Created by link on 31/07/2023.
+//  Created by link on 01/06/2023.
 //
 
 import Foundation
 import UIKit
 import ParticleAuthCore
 
-class SolanaWalletSignTestViewController: TestViewController {
+class EVMWalletSignTestViewController: TestViewController {
     enum TestCase: String, CaseIterable {
         case copyPublicAddress = "Copy public address"
         case signMessage = "Sign message"
-        case signTransaction = "Sign transaction"
-        case signTransactions = "Sign transactions"
+        case signTypedDataV4 = "SignTypedData V4"
+        case signMessageUnique = "Sign message unique"
+        case signTypedDataV4Unique = "SignTypedData V4 unique"
+        
         case sendNative = "Send transaction native"
         case sendToken = "Send transaction token"
     }
     
     let data: [TestCase] = TestCase.allCases
+    
     let auth = Auth()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,8 +51,9 @@ class SolanaWalletSignTestViewController: TestViewController {
         switch self.data[indexPath.row] {
         case .copyPublicAddress: copyPublicAddressMethod()
         case .signMessage: signMessagePage()
-        case .signTransaction: signTransactionPage()
-        case .signTransactions: signTransactionsPage()
+        case .signTypedDataV4: signTypedDataV4Page()
+        case .signMessageUnique: signMessageUniquePage()
+        case .signTypedDataV4Unique: signTypedDataV4UniquePage()
         case .sendNative: sendNativePage()
         case .sendToken: sendTokenPage()
         }
@@ -54,9 +62,9 @@ class SolanaWalletSignTestViewController: TestViewController {
 
 // MARK: - Test Methods
 
-extension SolanaWalletSignTestViewController {
+extension EVMWalletSignTestViewController {
     private func copyPublicAddressMethod() {
-        let publicAddress = auth.solana.getAddress() ?? ""
+        let publicAddress = auth.evm.getAddress()
         UIPasteboard.general.string = publicAddress
         ToastTest.showResult("copyed \(publicAddress)")
     }
@@ -65,17 +73,22 @@ extension SolanaWalletSignTestViewController {
         let vc = SignMessagePage(supportMethod: .signMessage)
         navigationController?.pushViewController(vc, animated: true)
     }
-
-    private func signTransactionPage() {
-        let vc = SignMessagePage(supportMethod: .signTransaction)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
-    private func signTransactionsPage() {
-        let vc = SignMessagePage(supportMethod: .signTransactions)
+    
+    private func signMessageUniquePage() {
+        let vc = SignMessagePage(supportMethod: .signMessageUnique)
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    private func signTypedDataV4Page() {
+        let vc = SignMessagePage(supportMethod: .signTypedData)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func signTypedDataV4UniquePage() {
+        let vc = SignMessagePage(supportMethod: .signTypedDataUnique)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
     private func sendNativePage() {
         let vc = SignMessagePage(supportMethod: .sendNative)
         navigationController?.pushViewController(vc, animated: true)

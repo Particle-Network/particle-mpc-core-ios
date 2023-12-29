@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Demo
+//  ParticleMPC
 //
-//  Created by link on 31/07/2023.
+//  Created by link on 15/05/2023.
 //
 
 import CryptoSwift
@@ -15,6 +15,8 @@ import UIKit
 enum TestCase: String, CaseIterable {
     case login = "Login"
     case logout = "Logout"
+    case helper = "Helper"
+    case authVc = "AuthVc"
     case evmWalletSign = "EVMWalletSign"
     case solanaWalletSign = "SolanaWalletSign"
     case otherApi = "OtherAPI"
@@ -23,12 +25,27 @@ enum TestCase: String, CaseIterable {
 }
 
 class MainViewController: UITableViewController {
+    let auth = Auth()
+    
     var data: [TestCase] {
-        if ParticleNetwork.getChainInfo().chainType == .solana {
-            return TestCase.allCases.filter { $0 != .evmWalletSign }
-        } else {
-            return TestCase.allCases.filter { $0 != .solanaWalletSign }
+        return TestCase.allCases.filter {
+            if isDeveloper {
+                return $0 == .login ||
+                    $0 == .evmWalletSign ||
+                    $0 == .solanaWalletSign ||
+                    $0 == .otherApi ||
+                    $0 == .language ||
+                    $0 == .logout ||
+                    $0 == .apperance
+                   
+            } else {
+                return true
+            }
         }
+    }
+    
+    var isDeveloper: Bool {
+        return true
     }
     
     let bag = DisposeBag()
@@ -40,6 +57,10 @@ class MainViewController: UITableViewController {
         addTitle()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,9 +76,9 @@ class MainViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let targetName = Bundle.main.infoDictionary!["CFBundleName"] as! String
         let model = data[indexPath.row]
         
+        let targetName = Bundle.main.infoDictionary!["CFBundleName"] as! String
         let vcClass = NSClassFromString("\(targetName).\(model.rawValue)TestViewController") as! TestViewController.Type
         let vc = vcClass.init()
         vc.testCase = model
@@ -76,7 +97,6 @@ class MainViewController: UITableViewController {
             let vc = SwitchChainViewController()
             vc.selectHandler = { [weak self] in
                 self?.addTitle()
-                self?.tableView.reloadData()
             }
             self.present(vc, animated: true)
             

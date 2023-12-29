@@ -1,20 +1,25 @@
 //
 //  SignMessagePage.swift
-//  Demo
+//  ParticleMPC
 //
-//  Created by link on 31/07/2023.
+//  Created by link on 01/06/2023.
 //
 
 import Foundation
 import ParticleAuthCore
 import ParticleNetworkBase
 import ParticleWalletAPI
+import ProgressHUD
 import RxSwift
 import SwiftMessages
 import SwiftyJSON
 import UIKit
+import Base58_swift
 
 class SignMessagePage: UIViewController {
+    static let ScreenWidth = UIScreen.main.bounds.width
+    static let ScreenHeight = UIScreen.main.bounds.height
+    
     enum SupportMethod {
         case signMessage
         case signMessageUnique
@@ -30,6 +35,9 @@ class SignMessagePage: UIViewController {
     
     let auth = Auth()
     
+    private var sourceText: String = ""
+    let tableView = UITableView(frame: .zero, style: .plain)
+    
     var publicAddress: String? {
         if ParticleNetwork.getChainInfo().chainType != .solana {
             let publicAddress = auth.evm.getAddress()
@@ -40,29 +48,6 @@ class SignMessagePage: UIViewController {
             
             return publicAddress
         }
-    }
-    
-    private let sourceTextView = UITextView().then {
-        $0.layer.borderWidth = 2
-        $0.layer.borderColor = UIColor.systemBlue.cgColor
-        $0.layer.cornerRadius = 10
-        $0.layer.masksToBounds = true
-        $0.isEditable = true
-    }
-    
-    private let resultTextView = UITextView().then {
-        $0.text = "result is here"
-        $0.layer.borderWidth = 2
-        $0.layer.borderColor = UIColor.systemBlue.cgColor
-        $0.layer.cornerRadius = 10
-        $0.layer.masksToBounds = true
-        $0.isEditable = true
-    }
-    
-    private let signBtn = UIButton(type: .system).then {
-        $0.setTitle("Sign", for: .normal)
-        $0.setTitleColor(UIColor.white, for: .normal)
-        $0.backgroundColor = .systemBlue
     }
     
     let supportMethod: SupportMethod
@@ -84,45 +69,57 @@ class SignMessagePage: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProgressHUD.colorAnimation = .systemPurple
+        ProgressHUD.colorProgress = .systemPurple
+        ProgressHUD.animationType = AnimationType.circleStrokeSpin
         setUI()
         
         switch supportMethod {
         case .signMessage:
             if ParticleNetwork.getChainInfo().chainType != .solana {
-                sourceTextView.text = message ?? "hello world"
+                setSourceText(message ?? "hello world")
             } else {
                 // "hello world" encoded to base58
-                sourceTextView.text = message ?? "StV1DL6CwTryKyV"
+                setSourceText(message ?? Base58.encode("hello world".data(using: .utf8)!))
             }
         case .signMessageUnique:
-            sourceTextView.text = message ?? "hello world"
+            setSourceText(message ?? "hello world")
         case .signTypedData:
-            sourceTextView.text = message ?? getTypedDataV4()
+            setSourceText(message ?? getTypedDataV4())
         case .signTypedDataUnique:
-            sourceTextView.text = message ?? getTypedDataV4()
+            setSourceText(message ?? getTypedDataV4())
         case .sendNative:
             if publicAddress == nil {
-                sourceTextView.text = "not login, public address is nil"
+                setSourceText("not login, public address is nil")
                 return
             }
-            sourceTextView.text = "waiting configure transactions"
+            
+            setSourceText("waiting configure transactions")
             
             if ParticleNetwork.getChainInfo().chainType != .solana {
+                let dict = ["value": "0x38D7EA4C68000", // 10^15
+                            "data": "0x",
+                            "from": publicAddress!,
+                            "to": "0xa0869E99886e1b6737A4364F2cf9Bb454FD637E4"]
+                let string = "0x" + (try! JSONEncoder().encode(dict)).toHexString()
+                
+//                sourceTextView.text = string
                 var amount: String
                 if ParticleNetwork.getChainInfo().isTron {
                     amount = "0x3E8"
                 } else {
                     amount = "0x38D7EA4C68000"
                 }
-                    
-                sourceTextView.text = """
+                
+                setSourceText("""
                 {
                 "data": "0x",
                 "from": "\(publicAddress!)",
                 "to": "0xa0869E99886e1b6737A4364F2cf9Bb454FD637E4",
                 "value": "\(amount)"
                 }
-                """
+                """)
+                
             } else {
                 let receiverAddress = "9LR6zGAFB3UJcLg9tWBQJxEJCbZh2UTnSU14RBxsK1ZN"
                 
@@ -131,11 +128,11 @@ class SignMessagePage: UIViewController {
                         let transaction = try await self.getSolanaNativeTransaction(publicAddress: self.publicAddress!, receiverAddress: receiverAddress)
                        
                         DispatchQueue.main.async {
-                            self.sourceTextView.text = transaction
+                            self.setSourceText(transaction)
                         }
                     } catch {
                         DispatchQueue.main.async {
-                            self.resultTextView.text = String(describing: error)
+                            self.setResultSignature(String(describing: error))
                         }
                     }
                 }
@@ -144,12 +141,12 @@ class SignMessagePage: UIViewController {
         case .sendToken:
            
             if publicAddress == nil {
-                sourceTextView.text = "not login, public address is nil"
+                setSourceText("not login, public address is nil")
+                
                 return
             }
-            
-            signBtn.isEnabled = false
-            sourceTextView.text = "waiting configure transactions"
+            enabledSignBtn(false)
+            setSourceText("waiting configure transactions")
             if ParticleNetwork.getChainInfo().chainType != .solana {
                 let contractAddress = "0x326C977E6efc84E512bB9C30f76E30c160eD06FB"
                 
@@ -159,10 +156,10 @@ class SignMessagePage: UIViewController {
                     guard let self = self else { return }
                     switch result {
                     case .failure(let error):
-                        self.resultTextView.text = String(describing: error)
+                        self.setResultSignature(String(describing: error))
                     case .success(let tx):
-                        self.sourceTextView.text = tx
-                        self.signBtn.isEnabled = true
+                        self.setSourceText(tx)
+                        self.enabledSignBtn(true)
                     }
                 }.disposed(by: bag)
             } else {
@@ -173,12 +170,12 @@ class SignMessagePage: UIViewController {
                         let transaction = try await self.getSolanaTokenTransaction(publicAddress: self.publicAddress!, receiverAddress: receiverAddress, mintAddress: mintAddress, amount: ParticleNetworkBase.BInt(10000))
                         
                         DispatchQueue.main.async {
-                            self.sourceTextView.text = transaction
-                            self.signBtn.isEnabled = true
+                            self.setSourceText(transaction)
+                            self.enabledSignBtn(true)
                         }
                     } catch {
                         DispatchQueue.main.async {
-                            self.resultTextView.text = String(describing: error)
+                            self.setResultSignature(String(describing: error))
                         }
                     }
                 }
@@ -187,13 +184,13 @@ class SignMessagePage: UIViewController {
         case .signTransaction:
             
             if publicAddress == nil {
-                sourceTextView.text = "not login, public address is nil"
+                setSourceText("not login, public address is nil")
+                
                 return
             }
+            enabledSignBtn(false)
             
-            signBtn.isEnabled = false
-            
-            sourceTextView.text = "waiting configure transactions"
+            setSourceText("waiting configure transactions")
             
             let receiverAddress = "9LR6zGAFB3UJcLg9tWBQJxEJCbZh2UTnSU14RBxsK1ZN"
             
@@ -202,12 +199,12 @@ class SignMessagePage: UIViewController {
                     let transaction = try await self.getSolanaNativeTransaction(publicAddress: self.publicAddress!, receiverAddress: receiverAddress)
                    
                     DispatchQueue.main.async {
-                        self.sourceTextView.text = transaction
-                        self.signBtn.isEnabled = true
+                        self.setSourceText(transaction)
+                        self.enabledSignBtn(true)
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        self.resultTextView.text = String(describing: error)
+                        self.setResultSignature(String(describing: error))
                     }
                 }
             }
@@ -215,12 +212,12 @@ class SignMessagePage: UIViewController {
         case .signTransactions:
             
             if publicAddress == nil {
-                sourceTextView.text = "not login, public address is nil"
+                setSourceText("not login, public address is nil")
                 return
             }
-            signBtn.isEnabled = false
+            enabledSignBtn(false)
             
-            sourceTextView.text = "waiting configure transactions"
+            setSourceText("waiting configure transactions")
             
             let receiverAddress = "9LR6zGAFB3UJcLg9tWBQJxEJCbZh2UTnSU14RBxsK1ZN"
             let mintAddress = "GobzzzFQsFAHPvmwT42rLockfUCeV3iutEkK218BxT8K"
@@ -230,12 +227,12 @@ class SignMessagePage: UIViewController {
                     let transaction2 = try await self.getSolanaTokenTransaction(publicAddress: self.publicAddress!, receiverAddress: receiverAddress, mintAddress: mintAddress, amount: ParticleNetworkBase.BInt(10000))
                     
                     DispatchQueue.main.async {
-                        self.sourceTextView.text = [transaction1, transaction2].joined(separator: ",")
-                        self.signBtn.isEnabled = true
+                        self.setSourceText([transaction1, transaction2].joined(separator: ","))
+                        self.enabledSignBtn(true)
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        self.resultTextView.text = String(describing: error)
+                        self.setResultSignature(String(describing: error))
                     }
                 }
             }
@@ -243,57 +240,30 @@ class SignMessagePage: UIViewController {
     }
     
     private func setUI() {
+        view.addSubview(tableView)
+        
+        tableView.snp.makeConstraints { make in
+            make.bottom.left.right.equalToSuperview()
+            make.top.equalToSuperview()
+        }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(SignCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 400
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
-        view.addSubview(sourceTextView)
-        view.addSubview(resultTextView)
-        view.addSubview(signBtn)
-        view.backgroundColor = UIColor.systemBackground
-        
-        sourceTextView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(100)
-            make.height.equalTo(150)
-            make.left.right.equalToSuperview().inset(18)
-        }
-        
-        resultTextView.snp.makeConstraints { make in
-            make.top.equalTo(sourceTextView.snp.bottom).offset(30)
-            make.height.equalTo(150)
-            make.left.right.equalToSuperview().inset(18)
-        }
-        
-        signBtn.snp.makeConstraints { make in
-            make.top.equalTo(resultTextView.snp.bottom).offset(30)
-            make.height.equalTo(30)
-            make.left.right.equalToSuperview().inset(18)
-        }
-        
-        signBtn.rx.tap.bind { [weak self] in
-            guard let self = self else { return }
-            
-            var message = self.sourceTextView.text ?? ""
-            
-            if ParticleNetwork.getChainInfo().chainType != .solana {
-                if self.supportMethod == .sendToken || self.supportMethod == .sendNative {
-                    if message.isValidHexString() {
-                    } else {
-                        message = "0x" + ((try? JSON(parseJSON: message).rawData())?.toHexString() ?? "")
-                    }
-                }
-            }
-            
-            self.sign(message)
-            
-        }.disposed(by: bag)
     }
     
     private func sign(_ message: String) {
-        let chainInfo = ParticleNetwork.getChainInfo()
+        ProgressHUD.show(interaction: false)
+        
         Task {
             do {
+                let chainInfo = ParticleNetwork.getChainInfo()
                 var signature: String
                 switch self.supportMethod {
                 case .signMessage:
-                    if ParticleNetwork.getChainInfo().chainType == .solana {
+                    if chainInfo.chainType == .solana {
                         signature = try await self.auth.solana.signMessage(message, chainInfo: chainInfo)
                     } else {
                         signature = try await self.auth.evm.personalSign(message, chainInfo: chainInfo)
@@ -343,12 +313,14 @@ class SignMessagePage: UIViewController {
                 }
                 
                 DispatchQueue.main.async {
-                    self.resultTextView.text = signature
+                    self.setResultSignature(signature)
+                    ProgressHUD.dismiss()
                 }
                 ToastTest.showResult("sign success \(signature)")
             } catch {
                 DispatchQueue.main.async {
-                    self.resultTextView.text = String(describing: error)
+                    self.setResultSignature(String(describing: error))
+                    ProgressHUD.dismiss()
                 }
                 ToastTest.showError("sign error \(error)")
             }
@@ -391,4 +363,66 @@ struct RecentBlockHash: Codable {
     
     let context: Context
     let value: Value
+}
+
+extension SignMessagePage {
+    func setSourceText(_ text: String) {
+        sourceText = text
+        if let cell = tableView.cellForRow(at: .init(row: 0, section: 0)) as? SignCell {
+            cell.sourceTextView.text = text
+        }
+    }
+    
+    func getSourceText() -> String {
+        if let cell = tableView.cellForRow(at: .init(row: 0, section: 0)) as? SignCell {
+            return cell.sourceTextView.text
+        }
+        
+        return ""
+    }
+    
+    func setResultSignature(_ text: String) {
+        if let cell = tableView.cellForRow(at: .init(row: 0, section: 0)) as? SignCell {
+            cell.resultTextView.text = text
+        }
+    }
+    
+    func enabledSignBtn(_ isEnabled: Bool) {
+        if let cell = tableView.cellForRow(at: .init(row: 0, section: 0)) as? SignCell {
+            cell.signBtn.isEnabled = isEnabled
+        }
+    }
+}
+
+extension SignMessagePage: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SignCell
+        cell.sourceTextView.text = sourceText
+        cell.signHandler = { [weak self] in
+            guard let self = self else { return }
+            
+            var message = self.getSourceText()
+            
+            if ParticleNetwork.getChainInfo().chainType != .solana {
+                if self.supportMethod == .sendToken || self.supportMethod == .sendNative {
+                    if message.isValidHexString() {
+                    } else {
+                        message = "0x" + ((try? JSON(parseJSON: message).rawData())?.toHexString() ?? "")
+                    }
+                }
+            }
+            
+            self.sign(message)
+        }
+        
+        return cell
+    }
 }

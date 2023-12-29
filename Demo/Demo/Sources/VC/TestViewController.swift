@@ -1,16 +1,17 @@
 //
 //  TestViewController.swift
-//  Demo
+//  ParticleMPC
 //
-//  Created by link on 31/07/2023.
+//  Created by link on 22/05/2023.
 //
 
 import Foundation
 import UIKit
 
 class TestViewController: UITableViewController {
-    var testCase: TestCase = .login
+    var testCase: TestCase = .helper
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = self.testCase.rawValue

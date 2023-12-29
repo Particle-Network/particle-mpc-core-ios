@@ -1,8 +1,8 @@
 //
 //  LoginJWTCell.swift
-//  Demo
+//  ParticleMPC
 //
-//  Created by link on 31/07/2023.
+//  Created by link on 16/05/2023.
 //
 
 import Foundation
@@ -26,12 +26,6 @@ class LoginJWTCell: UITableViewCell {
         $0.layer.masksToBounds = true
     }
     
-    private let froceMasterPasswordLabel = UILabel().then {
-        $0.text = "Prompt Master Password"
-    }
-    
-    private let segmentedControl = UISegmentedControl(items: ["0", "1", "2"])
-    
     private let confirmButton = UIButton(type: .system).then {
         $0.setTitle("Login", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
@@ -49,13 +43,10 @@ class LoginJWTCell: UITableViewCell {
     }
     
     private func config() {
+        self.selectionStyle = .none
+        
         contentView.addSubview(jwtTextView)
         contentView.addSubview(confirmButton)
-        contentView.addSubview(froceMasterPasswordLabel)
-        contentView.addSubview(segmentedControl)
-        segmentedControl.selectedSegmentIndex = 0
-        
-        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
         
         jwtTextView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(8)
@@ -63,20 +54,8 @@ class LoginJWTCell: UITableViewCell {
             make.height.equalTo(120)
         }
         
-        froceMasterPasswordLabel.snp.makeConstraints { make in
-            make.top.equalTo(jwtTextView.snp.bottom).offset(10)
-            make.left.equalToSuperview().inset(18)
-        }
-        
-        segmentedControl.snp.makeConstraints { make in
-            make.centerY.equalTo(froceMasterPasswordLabel.snp.centerY)
-            make.right.equalToSuperview().inset(18)
-            make.height.equalTo(20)
-            make.width.equalTo(90)
-        }
-            
         confirmButton.snp.makeConstraints { make in
-            make.top.equalTo(segmentedControl.snp.bottom).offset(10)
+            make.top.equalTo(jwtTextView.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(18)
             make.height.equalTo(30)
         }
@@ -90,16 +69,7 @@ class LoginJWTCell: UITableViewCell {
         }.disposed(by: bag)
     }
     
-    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        print("Selected segment index is \(sender.selectedSegmentIndex)")
-        ParticleNetwork.setSecurityAccountConfig(config: .init(promptMasterPasswordSettingWhenLogin: sender.selectedSegmentIndex))
-    }
-    
     func getJWT() -> String {
         return jwtTextView.text ?? ""
-    }
-    
-    func getNumber() -> Int {
-        segmentedControl.selectedSegmentIndex
     }
 }
