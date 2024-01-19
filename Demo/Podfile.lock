@@ -47,7 +47,7 @@ PODS:
     - CryptoSwift
     - SwiftyJSON (~> 5.0)
     - Thresh
-  - ParticleNetworkBase (1.3.10):
+  - ParticleNetworkBase (1.3.11):
     - Base58.swift
     - BigInt (~> 5.2.0)
     - CryptoSwift
@@ -56,7 +56,7 @@ PODS:
     - RxSwift (= 6.6.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletAPI (1.3.10):
+  - ParticleWalletAPI (1.3.11):
     - CryptoSwift
     - GRDB.swift (= 6.16.0)
     - ParticleNetworkBase
@@ -100,8 +100,8 @@ DEPENDENCIES:
   - ConnectCommon (= 0.2.16)
   - ParticleAuthCore (= 1.3.7)
   - ParticleMPCCore (= 1.3.7)
-  - ParticleNetworkBase (= 1.3.10)
-  - ParticleWalletAPI (= 1.3.10)
+  - ParticleNetworkBase (= 1.3.11)
+  - ParticleWalletAPI (= 1.3.11)
   - ProgressHUD (= 13.8.6)
   - Thresh (= 1.3.7)
 
@@ -151,8 +151,8 @@ SPEC CHECKSUMS:
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   ParticleAuthCore: 8624c7f1d09e4bdd11b97e873a0b0441a08bdca6
   ParticleMPCCore: e56b26c5c33fa132f8e0b6324150a81daea76056
-  ParticleNetworkBase: aa1f3c62bf5967543b2ed4dc6c1b9836f22055d5
-  ParticleWalletAPI: 127e2eb050ce1cade82ccd17046abcbfc4026480
+  ParticleNetworkBase: 8a93c1d53af58521a14fde66036a6513aec77182
+  ParticleWalletAPI: 84a14e58d2cf9152765d636713157988b953c42f
   ProgressHUD: ee8924300accca88bfa39f6350f757c1c869a69c
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
@@ -170,6 +170,6 @@ SPEC CHECKSUMS:
   Thresh: 8820725786d1e4c79c8ce54e9f409c3099bdbb9a
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: f86ea06cac57cfe0102efa2703ea62a4fdbd87a8
+PODFILE CHECKSUM: 908dd17ba745f1d5e81bab187a33a398afabc80b
 
 COCOAPODS: 1.14.3
