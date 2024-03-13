@@ -19,10 +19,10 @@ Please note that the SDK supports `ios-arm64` (iOS devices). We currently do not
 
 | Xcode version                | 14.1 or higher | 
 |------------------------------|---------------|
-| ParticleAuthCore             | 1.3.8         |
-| ParticleMPCCore              | 1.3.8         |
-| AuthCoreAdapter              | 1.3.8         |
-| Thresh                       | 1.3.8         |
+| ParticleAuthCore             | 1.3.9         |
+| ParticleMPCCore              | 1.3.9         |
+| AuthCoreAdapter              | 1.3.9         |
+| Thresh                       | 1.3.9         |
 
 ###  🧂 Update Podfile
 ```ruby
