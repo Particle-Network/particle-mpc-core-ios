@@ -17,7 +17,7 @@ Xcode 15.0 or higher
 Please note that the SDK supports `ios-arm64` (iOS devices). We currently do not support simulators. To perform testing, you will require an actual iPhone device.
 
 
-| Xcode version                | 14.1 or higher | 
+| Xcode version                | 15.0 or higher | 
 |------------------------------|---------------|
 | ParticleAuthCore             | 1.3.10         |
 | ParticleMPCCore              | 1.3.10         |
