@@ -19,10 +19,20 @@ Please note that the SDK supports `ios-arm64` (iOS devices). We currently do not
 
 | Xcode version                | 15.0 or higher | 
 |------------------------------|---------------|
-| ParticleAuthCore             | 1.3.10         |
-| ParticleMPCCore              | 1.3.10         |
-| AuthCoreAdapter              | 1.3.10         |
-| Thresh                       | 1.3.10         |
+| ParticleAuthCore             | 1.4.0         |
+| ParticleMPCCore              | 1.4.0         |
+| AuthCoreAdapter              | 1.4.0         |
+| Thresh                       | 1.4.0         |
+
+## 🎯 Support Apple Privacy Manifests
+From version 1.4.0, all SDKs have been adapted to Apple's privacy requirements.
+
+The following third-party SDKs require the use of specific versions.
+```ruby
+pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'
+pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
+```
+
 
 ###  🧂 Update Podfile
 ```ruby
