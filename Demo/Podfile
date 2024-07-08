@@ -12,14 +12,14 @@ pod 'ParticleMPCCore', '1.4.7'
 pod 'Thresh', '1.4.7'
 
 pod 'ConnectCommon', '0.2.24'
-pod 'ParticleNetworkBase', '1.4.6'
+pod 'ParticleNetworkBase', '1.4.9'
 
 # from 1.14.0 you need add these two lines.
 pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'
 pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
 
 # help create transaction
-pod 'ParticleWalletAPI', '1.4.6'
+pod 'ParticleWalletAPI', '1.4.9'
 pod 'ProgressHUD', '13.8.6'
 end
 
