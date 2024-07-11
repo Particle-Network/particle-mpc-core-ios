@@ -6,10 +6,10 @@ target 'Demo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'AuthCoreAdapter', '1.4.7'
-pod 'ParticleAuthCore', '1.4.7'
-pod 'ParticleMPCCore', '1.4.7'
-pod 'Thresh', '1.4.7'
+pod 'AuthCoreAdapter', '1.4.8'
+pod 'ParticleAuthCore', '1.4.8'
+pod 'ParticleMPCCore', '1.4.8'
+pod 'Thresh', '1.4.8'
 
 pod 'ConnectCommon', '0.2.24'
 pod 'ParticleNetworkBase', '1.4.9'

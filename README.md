@@ -19,10 +19,10 @@ Please note that the SDK supports `ios-arm64` (iOS devices). We currently do not
 
 | Xcode version                | 15.0 or higher | 
 |------------------------------|---------------|
-| ParticleAuthCore             | 1.4.7        |
-| ParticleMPCCore              | 1.4.7        |
-| AuthCoreAdapter              | 1.4.7        |
-| Thresh                       | 1.4.7        |
+| ParticleAuthCore             | 1.4.8        |
+| ParticleMPCCore              | 1.4.8        |
+| AuthCoreAdapter              | 1.4.8        |
+| Thresh                       | 1.4.8        |
 
 ## 🎯 Support Apple Privacy Manifests
 From version 1.4.0, all SDKs have been adapted to Apple's privacy requirements.
