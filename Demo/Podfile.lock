@@ -58,7 +58,7 @@ PODS:
   - ParticleWalletAPI (1.4.9):
     - GRDB.swift (~> 6.24.1)
     - ParticleNetworkBase
-  - ProgressHUD (13.8.6)
+  - ProgressHUD (14.1.1)
   - RxAlamofire (6.1.1):
     - RxAlamofire/Core (= 6.1.1)
   - RxAlamofire/Core (6.1.1):
@@ -95,7 +95,7 @@ DEPENDENCIES:
   - ParticleMPCCore (= 1.4.8)
   - ParticleNetworkBase (= 1.4.9)
   - ParticleWalletAPI (= 1.4.9)
-  - ProgressHUD (= 13.8.6)
+  - ProgressHUD (= 14.1.1)
   - SkeletonView (from `https://github.com/SunZhiC/SkeletonView.git`, branch `main`)
   - SwiftyUserDefaults (from `https://github.com/SunZhiC/SwiftyUserDefaults.git`, branch `master`)
   - Thresh (= 1.4.8)
@@ -162,7 +162,7 @@ SPEC CHECKSUMS:
   ParticleMPCCore: c8c429445cfa2c681c41b8da5913c3c95ce03f35
   ParticleNetworkBase: 5d112d15d6b0a593725e338b23fefd334de79e98
   ParticleWalletAPI: 2ccc910c503c47cf3fb81ec8d7844d70daa16ba6
-  ProgressHUD: ee8924300accca88bfa39f6350f757c1c869a69c
+  ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
@@ -179,6 +179,6 @@ SPEC CHECKSUMS:
   Thresh: c8967d8129f812c58a1d9817c54720e6619f0e5d
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: ebfb42d515f8abc0634039f4bf380ab93d25da5b
+PODFILE CHECKSUM: 9e5adc050510ae0169f6ec6d25df1107e6325081
 
 COCOAPODS: 1.15.2

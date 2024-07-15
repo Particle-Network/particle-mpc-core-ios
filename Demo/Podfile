@@ -20,7 +20,7 @@ pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :bran
 
 # help create transaction
 pod 'ParticleWalletAPI', '1.4.9'
-pod 'ProgressHUD', '13.8.6'
+pod 'ProgressHUD', '14.1.1'
 end
 
 post_install do |installer|

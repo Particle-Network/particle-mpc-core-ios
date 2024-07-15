@@ -255,8 +255,7 @@ class SignMessagePage: UIViewController {
     }
     
     private func sign(_ message: String) {
-        ProgressHUD.show(interaction: false)
-        
+        ProgressHUD.animate(interaction: false)
         Task {
             do {
                 let chainInfo = ParticleNetwork.getChainInfo()
