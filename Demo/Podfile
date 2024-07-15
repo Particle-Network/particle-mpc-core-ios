@@ -6,20 +6,20 @@ target 'Demo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'AuthCoreAdapter', '1.4.8'
-pod 'ParticleAuthCore', '1.4.8'
-pod 'ParticleMPCCore', '1.4.8'
-pod 'Thresh', '1.4.8'
+pod 'AuthCoreAdapter', '1.4.9'
+pod 'ParticleAuthCore', '1.4.9'
+pod 'ParticleMPCCore', '1.4.9'
+pod 'Thresh', '1.4.9'
 
-pod 'ConnectCommon', '0.2.24'
-pod 'ParticleNetworkBase', '1.4.9'
+pod 'ConnectCommon', '0.2.26'
+pod 'ParticleNetworkBase', '1.4.10'
 
 # from 1.14.0 you need add these two lines.
 pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'
 pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
 
 # help create transaction
-pod 'ParticleWalletAPI', '1.4.9'
+pod 'ParticleWalletAPI', '1.4.10'
 pod 'ProgressHUD', '14.1.1'
 end
 
