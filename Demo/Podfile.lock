@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.9.1)
-  - AuthCoreAdapter (1.4.10):
+  - AuthCoreAdapter (1.4.11):
     - ConnectCommon
     - ParticleAuthCore
   - AWSCore (2.34.2)
@@ -31,7 +31,7 @@ PODS:
   - libwebp/sharpyuv (1.3.2)
   - libwebp/webp (1.3.2):
     - libwebp/sharpyuv
-  - ParticleAuthCore (1.4.10):
+  - ParticleAuthCore (1.4.11):
     - AWSKMS (~> 2.34.2)
     - ParticleMPCCore
     - ParticleNetworkBase
@@ -41,7 +41,7 @@ PODS:
     - SnapKit (~> 5.7.1)
     - SwiftMessages
     - Then
-  - ParticleMPCCore (1.4.10):
+  - ParticleMPCCore (1.4.11):
     - Base58.swift
     - CryptoSwift (~> 1.8.1)
     - Thresh
@@ -85,20 +85,20 @@ PODS:
   - SwiftyJSON (5.0.2)
   - SwiftyUserDefaults (5.3.0)
   - Then (3.0.0)
-  - Thresh (1.4.10)
+  - Thresh (1.4.11)
   - TweetNacl (1.0.2)
 
 DEPENDENCIES:
-  - AuthCoreAdapter (= 1.4.10)
+  - AuthCoreAdapter (= 1.4.11)
   - ConnectCommon (= 0.2.26)
-  - ParticleAuthCore (= 1.4.10)
-  - ParticleMPCCore (= 1.4.10)
+  - ParticleAuthCore (= 1.4.11)
+  - ParticleMPCCore (= 1.4.11)
   - ParticleNetworkBase (= 1.4.10)
   - ParticleWalletAPI (= 1.4.10)
   - ProgressHUD (= 14.1.1)
   - SkeletonView (from `https://github.com/SunZhiC/SkeletonView.git`, branch `main`)
   - SwiftyUserDefaults (from `https://github.com/SunZhiC/SwiftyUserDefaults.git`, branch `master`)
-  - Thresh (= 1.4.10)
+  - Thresh (= 1.4.11)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -149,7 +149,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  AuthCoreAdapter: 538f9c57635a9d184545dfb657a82a33a3f154e6
+  AuthCoreAdapter: aa7d0173ba7f98a8a95f960903b3c5077b069248
   AWSCore: 13649d9063a6807ec37bde35c8f2da329d63d4e2
   AWSKMS: 311bb0cb71967273de5f4657875b9f2484ec13c2
   Base58.swift: e0e16655f9db843b8cd367593ed6f7d90d136b7f
@@ -158,8 +158,8 @@ SPEC CHECKSUMS:
   CryptoSwift: c63a805d8bb5e5538e88af4e44bb537776af11ea
   GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
-  ParticleAuthCore: 3ced5202ce50c04b1c4c9053e45bd98a35bd95ed
-  ParticleMPCCore: fd4052a49db4726d7bba3b5deb71956f2279245b
+  ParticleAuthCore: 96548b5844eadeb4d63e138c3383b8b5af396f85
+  ParticleMPCCore: 7930476dd1da4d19ece55ec5130487b2c07ea860
   ParticleNetworkBase: 98c7ef521e6ec3db98eff9369e264d69897f265f
   ParticleWalletAPI: 2ddbbef0f96751a781467d03038eee5bbaa74ee4
   ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
@@ -176,9 +176,9 @@ SPEC CHECKSUMS:
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   SwiftyUserDefaults: dd5dce66fb01565a82c3618b835f0546987eb683
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
-  Thresh: b9faa3a2ac7db901233e1b7a3ea291308d6ae43d
+  Thresh: 213a087253919fc037e58e3c7b68bc1f6c89d18e
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: 0f07587e021e8230c66381fc75be95413fc2b520
+PODFILE CHECKSUM: e1424d17575782aa89802a9c4b5403026283ceb8
 
 COCOAPODS: 1.15.2
