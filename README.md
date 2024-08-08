@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/github/license/Particle-Network/particle-ios)](https://github.com/Particle-Network/particle-mpc-core-ios/blob/main/LICENSE.txt)
 
 
-This repository contains [Auth Core](https://docs.particle.network/developers/auth-service/core/ios) sample source. It supports Solana and all EVM-compatiable chains now, more chains and more features coming soon! Learn more visit [Particle Network](https://docs.particle.network/).
+This repository contains [Auth Core](https://developers.particle.network/api-reference/auth/mobile-sdks/ios) sample source. It supports Solana and all EVM-compatiable chains now, more chains and more features coming soon! Learn more visit [Particle Network](https://developers.particle.network/).
 
 # Prerequisites
 Install the following:
@@ -86,7 +86,7 @@ pod install --repo-update
 4. Change master password.
 
 ## 📄 Docs
-1. https://docs.particle.network/developers/auth-service/core/ios
+1. https://developers.particle.network/api-reference/auth/mobile-sdks/ios
 
 
 ## 💼 Give Feedback
