@@ -19,10 +19,10 @@ Please note that the SDK supports `ios-arm64` (iOS devices). We currently do not
 
 | Xcode version                | 15.0 or higher | 
 |------------------------------|---------------|
-| ParticleAuthCore             | 1.4.11        |
-| ParticleMPCCore              | 1.4.11        |
-| AuthCoreAdapter              | 1.4.11        |
-| Thresh                       | 1.4.11        |
+| ParticleAuthCore             | 2.0.0        |
+| ParticleMPCCore              | 2.0.0        |
+| AuthCoreAdapter              | 2.0.0        |
+| Thresh                       | 2.0.0        |
 
 ## 🎯 Support Apple Privacy Manifests
 From version 1.4.0, all SDKs have been adapted to Apple's privacy requirements.
@@ -80,8 +80,8 @@ pod install --repo-update
 
 ## 🔬 Features
 
-1. Auth login with JWT.
-2. Logout.
+1. Auth connect with Social(google, apple, facebook ...), OTP Login(email and phone) and JWT.
+2. Disconnect.
 3. Sign.
 4. Change master password.
 

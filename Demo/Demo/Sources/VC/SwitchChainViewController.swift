@@ -9,6 +9,7 @@
 import Foundation
 import ParticleAuthCore
 import ParticleNetworkBase
+import ParticleNetworkChains
 import RxSwift
 import UIKit
 
@@ -18,7 +19,7 @@ class SwitchChainViewController: UIViewController {
     var selectHandler: (() -> Void)?
     let tableView = UITableView(frame: .zero, style: .grouped)
 
-    var data: [[String: [ParticleNetwork.ChainInfo]]] = []
+    var data: [[String: [ChainInfo]]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class SwitchChainViewController: UIViewController {
     }
 
     func configureData() {
-        let chainInfos = ParticleNetwork.ChainInfo.allNetworks
+        let chainInfos = ChainInfo.allNetworks
 
         let groupDict = Dictionary(grouping: chainInfos, by: { $0.name })
 
@@ -48,7 +49,7 @@ class SwitchChainViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
         ])
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
@@ -59,11 +60,11 @@ class SwitchChainViewController: UIViewController {
 }
 
 extension SwitchChainViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data[section].values.first?.count ?? 0
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in _: UITableView) -> Int {
         return data.count
     }
 
@@ -75,14 +76,14 @@ extension SwitchChainViewController: UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
         data[section].keys.first
     }
 }
 
 extension SwitchChainViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chainInfo = data[indexPath.section].values.first?[indexPath.row] ?? ParticleNetwork.ChainInfo.ethereum
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chainInfo = data[indexPath.section].values.first?[indexPath.row] ?? ChainInfo.ethereum
 
         let auth = Auth()
 
@@ -106,3 +107,4 @@ extension SwitchChainViewController: UITableViewDelegate {
         }
     }
 }
+
