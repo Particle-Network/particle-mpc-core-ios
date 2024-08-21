@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.9.1)
-  - AuthCoreAdapter (2.0.1):
+  - AuthCoreAdapter (2.0.2):
     - ConnectCommon
     - ParticleAuthCore
   - AWSCore (2.34.2)
@@ -31,7 +31,7 @@ PODS:
   - libwebp/sharpyuv (1.3.2)
   - libwebp/webp (1.3.2):
     - libwebp/sharpyuv
-  - ParticleAuthCore (2.0.1):
+  - ParticleAuthCore (2.0.2):
     - AWSKMS (~> 2.34.2)
     - ParticleMPCCore
     - ParticleNetworkBase
@@ -41,11 +41,11 @@ PODS:
     - SnapKit (~> 5.7.1)
     - SwiftMessages
     - Then
-  - ParticleMPCCore (2.0.1):
+  - ParticleMPCCore (2.0.2):
     - Base58.swift
     - CryptoSwift (~> 1.8.1)
     - Thresh
-  - ParticleNetworkBase (2.0.1):
+  - ParticleNetworkBase (2.0.2):
     - Alamofire (~> 5.9.0)
     - Base58.swift
     - BigInt (~> 5.2.0)
@@ -56,8 +56,8 @@ PODS:
     - RxSwift (= 6.6.0)
     - SwiftyJSON (~> 5.0.1)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleNetworkChains (2.0.1)
-  - ParticleWalletAPI (2.0.1):
+  - ParticleNetworkChains (2.0.2)
+  - ParticleWalletAPI (2.0.2):
     - GRDB.swift (~> 6.24.1)
     - ParticleNetworkBase
   - ProgressHUD (14.1.1)
@@ -87,21 +87,21 @@ PODS:
   - SwiftyJSON (5.0.2)
   - SwiftyUserDefaults (5.3.0)
   - Then (3.0.0)
-  - Thresh (2.0.1)
+  - Thresh (2.0.2)
   - TweetNacl (1.0.2)
 
 DEPENDENCIES:
-  - AuthCoreAdapter (= 2.0.1)
+  - AuthCoreAdapter (= 2.0.2)
   - ConnectCommon (= 2.0.0)
-  - ParticleAuthCore (= 2.0.1)
-  - ParticleMPCCore (= 2.0.1)
-  - ParticleNetworkBase (= 2.0.1)
-  - ParticleNetworkChains (= 2.0.1)
-  - ParticleWalletAPI (= 2.0.1)
+  - ParticleAuthCore (= 2.0.2)
+  - ParticleMPCCore (= 2.0.2)
+  - ParticleNetworkBase (= 2.0.2)
+  - ParticleNetworkChains (= 2.0.2)
+  - ParticleWalletAPI (= 2.0.2)
   - ProgressHUD (= 14.1.1)
   - SkeletonView (from `https://github.com/SunZhiC/SkeletonView.git`, branch `main`)
   - SwiftyUserDefaults (from `https://github.com/SunZhiC/SwiftyUserDefaults.git`, branch `master`)
-  - Thresh (= 2.0.1)
+  - Thresh (= 2.0.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -153,7 +153,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  AuthCoreAdapter: efed9b89865ed4df8e65092f595d4101de2c0a7c
+  AuthCoreAdapter: 397e3f66759b400a90b741cc1e53ddd95bfcdbf0
   AWSCore: 13649d9063a6807ec37bde35c8f2da329d63d4e2
   AWSKMS: 311bb0cb71967273de5f4657875b9f2484ec13c2
   Base58.swift: e0e16655f9db843b8cd367593ed6f7d90d136b7f
@@ -162,11 +162,11 @@ SPEC CHECKSUMS:
   CryptoSwift: 967f37cea5a3294d9cce358f78861652155be483
   GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
-  ParticleAuthCore: d1ba2101389c1fc890dfe5489ee5c7e43743ab5d
-  ParticleMPCCore: 48e135aaef2cbb658f4fdec1c540975c68359e8b
-  ParticleNetworkBase: d3201fded5097841b7768a44af08903a48eae299
-  ParticleNetworkChains: 8e7cb4af29bad061fe6f6ad6a392cfaeaa05f2f7
-  ParticleWalletAPI: eca1f4e741651fbb4efef560c781c5eecdf406bc
+  ParticleAuthCore: 431496fcd45fe22b1420f1191c122805238e14fe
+  ParticleMPCCore: dc9568198a21b27dc0eebbc03d826d3a61656036
+  ParticleNetworkBase: 17473acf8ca8ffb97041e21739d621d4e3957cb4
+  ParticleNetworkChains: c5f7392bf7430874499ebb522a285fcfb9cb5af1
+  ParticleWalletAPI: 5516a3e356e730098036c11bbe28fdf5b5517d30
   ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
@@ -181,9 +181,9 @@ SPEC CHECKSUMS:
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   SwiftyUserDefaults: dd5dce66fb01565a82c3618b835f0546987eb683
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
-  Thresh: 97626aa8e88103360b3874bb81a35cc6e42ac470
+  Thresh: da8fb05520ab379a7bb3f878177a639a8247385d
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: 42726da8d2bc2b3d04a99ea0ca4311e7a2aec30f
+PODFILE CHECKSUM: 232ee4b0ca76788d574fbf933f1874f51e91f89c
 
 COCOAPODS: 1.15.2
