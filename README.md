@@ -11,18 +11,18 @@ This repository contains [Auth Core](https://developers.particle.network/api-ref
 # Prerequisites
 Install the following:
 
-Xcode 15.0 or higher
+iOS 15.6 or higher
 
 ### Note
 Please note that the SDK supports `ios-arm64` (iOS devices). We currently do not support simulators. To perform testing, you will require an actual iPhone device.
 
 
-| Xcode version                | 15.0 or higher | 
+| iOS version                  | 15.6 or higher | 
 |------------------------------|---------------|
-| ParticleAuthCore             | 2.0.4        |
-| ParticleMPCCore              | 2.0.4        |
-| AuthCoreAdapter              | 2.0.4        |
-| Thresh                       | 2.0.4        |
+| ParticleAuthCore             | 2.0.8        |
+| ParticleMPCCore              | 2.0.8        |
+| AuthCoreAdapter              | 2.0.8        |
+| Thresh                       | 2.0.8        |
 
 ## 🎯 Support Apple Privacy Manifests
 From version 1.4.0, all SDKs have been adapted to Apple's privacy requirements.
